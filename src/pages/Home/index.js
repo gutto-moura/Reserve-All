@@ -1,5 +1,6 @@
 import React , {useState, useEffect}from 'react';
 import api from '../../services/api';
+import { addReserve } from '../../store/modules/reservas/actions';
 import { useDispatch } from "react-redux";
 import { Box, Lista } from "./styles"
 
@@ -16,10 +17,7 @@ export default function Home() {
   },[])
 
   function handleAdd(trip){
-    dispatch({
-      type: 'ADD_RESERVE',
-      trip
-    });
+    dispatch(addReserve(trip));
   }
  return (
    <div>
