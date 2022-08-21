@@ -29,3 +29,13 @@ export const Solicitar = styled.button`
     margin-top: 10px;
     font-weight: bold;
 `
+export const Amount = styled.div`
+    display: flex;
+    align-items: center;
+    
+    span{
+        padding: 5px;
+        font-weight: bold;
+        font-size: 17px;
+    }
+`
