@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeReserve, updateAmountReserve } from '../../store/modules/reservas/actions';
-import reserve from '../../store/modules/reservas/reducer';
-import { Reserva, Titulo, Solicitar, Amount } from "./styles";
 import { BsDashCircleDotted, BsPlusCircleDotted } from "react-icons/bs";
+import { Reserva, Titulo, Solicitar, Amount } from "./styles";
+import reserve from '../../store/modules/reservas/reducer';
+import { removeReserve, updateAmountReserve } from '../../store/modules/reservas/actions';
 
 export default function Reservas() {
   const dispatch = useDispatch()

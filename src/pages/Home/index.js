@@ -1,8 +1,8 @@
-import React , {useState, useEffect}from 'react';
-import api from '../../services/api';
-import { addReserve } from '../../store/modules/reservas/actions';
+import React , { useState, useEffect }from 'react';
 import { useDispatch } from "react-redux";
-import { Box, Lista } from "./styles"
+import { Box, Lista } from "./styles";
+import { addReserveRequest } from '../../store/modules/reservas/actions';
+import api from '../../services/api';
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -16,8 +16,8 @@ export default function Home() {
     loadTrips()
   },[])
 
-  function handleAdd(trip){
-    dispatch(addReserve(trip));
+  function handleAdd(id){
+    dispatch(addReserveRequest(id));
   }
  return (
    <div>
@@ -28,10 +28,9 @@ export default function Home() {
             <img src = {trip.image} alt = {trip.title} />
             <strong>{trip.title}</strong>
             <span>Status: {trip.status ? "Disponível" : "Indisponível"} </span>
-
             <button
               type = "button"
-              onClick= {() => handleAdd(trip)}
+              onClick= {() => handleAdd(trip.id)}
             >
               <span>RESERVAR</span>
             </button>
