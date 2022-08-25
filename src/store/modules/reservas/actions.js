@@ -4,9 +4,9 @@ export function addReserveRequest(id){
         id
       }
 }
-export function addReserveSucess(trip){
+export function addReserveSuccess(trip){
     return{
-        type: 'ADD_RESERVE_SUCESS',
+        type: 'ADD_RESERVE_SUCCESS',
         trip
       }
 }

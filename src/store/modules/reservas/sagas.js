@@ -4,7 +4,7 @@ import { addReserveSuccess, updateAmountReserve } from "./actions";
 
 function* addToReserve({ id }){
     const tripExists = yield select(
-        state => state.reserve.find(trip => trip.id ===id)
+        state => state.reserve.find(trip => trip.id === id)
     );
     const myStock = yield call(api.get, `/stock/${id}`);
     const stockAmount = myStock.data.amount;
@@ -16,8 +16,8 @@ function* addToReserve({ id }){
         alert('Quantidade de estoque atingido');
         return;
     }
+
     if(tripExists){
-        const amount = tripExists.amount + 1;
 
         yield put(updateAmountReserve(id, amount));
     }else{
