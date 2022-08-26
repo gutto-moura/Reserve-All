@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { BsDashCircleDotted, BsPlusCircleDotted } from "react-icons/bs";
 import { Reserva, Titulo, Solicitar, Amount } from "./styles";
 import reserve from '../../store/modules/reservas/reducer';
-import { removeReserve, updateAmountReserve } from '../../store/modules/reservas/actions';
+import { removeReserve, updateAmountRequest } from '../../store/modules/reservas/actions';
 
 export default function Reservas() {
   const dispatch = useDispatch()
@@ -13,10 +13,10 @@ export default function Reservas() {
     dispatch(removeReserve(id))
   }
   function decrementAmount(trip){
-    dispatch(updateAmountReserve(trip.id, trip.amount - 1));
+    dispatch(updateAmountRequest(trip.id, trip.amount - 1));
   }
   function incrementAmount(trip){
-    dispatch(updateAmountReserve(trip.id, trip.amount + 1));
+    dispatch(updateAmountRequest(trip.id, trip.amount + 1));
   }
  return (
    <div>
