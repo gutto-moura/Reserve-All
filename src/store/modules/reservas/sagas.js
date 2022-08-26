@@ -32,18 +32,18 @@ function* addToReserve({ id }){
         history.push('/reservas')
     }
 
-    function* updateAmount({ id, amount }){
-        if(amount <= 0) return;
+}
+function* updateAmount({ id, amount }){
+    if(amount <= 0) return;
 
-        const myStock = yield call(api.get, `/stock/${id}`);
-        const stockAmount = myStock.data.amount;
+    const myStock = yield call(api.get, `/stock/${id}`);
+    const stockAmount = myStock.data.amount;
 
-        if(amount > stockAmount){
-            alert('Quantidade maxima atingida.');
-            return;
-        }
-        yield put(updateAmountSuccess(id, amount))
+    if(amount > stockAmount){
+        alert('Quantidade maxima atingida.');
+        return;
     }
+    yield put(updateAmountSuccess(id, amount))
 }
 
 export default all ([
